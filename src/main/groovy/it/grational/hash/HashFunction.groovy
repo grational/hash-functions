@@ -1,4 +1,4 @@
-package it.italiaonline.rnd.hash
+package it.grational.hash
 
 interface HashFunction {
 	String digest()

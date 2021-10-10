@@ -1,3 +1,6 @@
-= hash-decorators
+= hash-functions
 
-A 'gigawatt' powered project.
+The project offers a generic interface `HashFunction` and a couple of its implementations:
+
+. `Sha1Sum` that uses the popular SHA1 algorithm implemented using the `java.security.MessageDigest` of the `JDK`
+. `NoHash` to be used when we want to leverage the `HashFunction` interface without actually touching the data. It could be useful sparingly to maintain the readability of the stored data.

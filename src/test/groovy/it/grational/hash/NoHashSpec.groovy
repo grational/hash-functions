@@ -1,4 +1,4 @@
-package it.italiaonline.rnd.hash
+package it.grational.hash
 
 import spock.lang.Specification
 import spock.lang.Shared
@@ -7,7 +7,7 @@ import spock.lang.Shared
  * The Sha1Hash class returns the sha1hash of a string passed
  * as parameter.
  */
-class Sha1SumSpec extends Specification {
+class NoHashSpec extends Specification {
 
 	@Shared
 	String shortString = 'testing string'
@@ -25,17 +25,17 @@ class Sha1SumSpec extends Specification {
 	 * The hash returned by the class should be equal to the
 	 * precalculated one
 	 */
-	def "The hash returned by Sha1Sum should be equal to the precalculated one"() {
+	def "The hash returned by NoHash should be equal to the original string"() {
 
 		expect:
-			String generatedHash = new Sha1Sum(input).digest()
+			String generatedHash = new NoHash(input).digest()
 			generatedHash == precalculatedHash
 
 		where:
 			input       | precalculatedHash
-			longString  | '63ad60bbcf52f3683a542e2cd09d10aaa3873bd1'
-			shortString | '8ddc1738150524a38bbb2c3e667c2c14f091534d'
-			''          | 'da39a3ee5e6b4b0d3255bfef95601890afd80709'
+			longString  | longString
+			shortString | shortString
+			''          | ''
 	}
 
 }
