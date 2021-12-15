@@ -13,13 +13,13 @@ plugins {
 	// groovy code linter
 	id 'codenarc'
 	// awesome git tag / gradle version integration
-	id 'pl.allegro.tech.build.axion-release' version '1.13.3'
+	id 'pl.allegro.tech.build.axion-release' version '1.13.6'
 }
 
 // [general] configuration
 project.ext {
-	groovyVersion   = '3.0.9'
-	spockVersion    = '2.0-groovy-3.0'
+	groovyVersion   = '2.5.15'
+	spockVersion    = '2.0-groovy-2.5'
 	codenarcVersion = '2.2.0'
 	slf4jVersion    = '1.7.32'
 }
@@ -32,9 +32,9 @@ scmVersion {
 
 project.with {
 	//project.name is set in the settings.gradle with rootProject.name
-	group                 'it.grational'
-	version               scmVersion.version // '0.5.0' (remove -SNAPSHOT for releases)
-	description           "The project offers some convenient classes to handle String hashes"
+	group       'it.grational'
+	version     scmVersion.version // '0.5.0' (remove -SNAPSHOT for releases)
+	description "The project offers some convenient classes to handle String hashes"
 }
 // [crosscompile] source and target java version
 allprojects {
